@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Madre, Martha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe5f3 25%, #fff0e6 50%, #e8f4ff 75%, #f0e6ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Flores flotantes de fondo */
+        .flower {
+            position: absolute;
+            font-size: 2em;
+            animation: float 8s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        .flower:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .flower:nth-child(2) { left: 80%; top: 30%; animation-delay: 2s; }
+        .flower:nth-child(3) { left: 20%; top: 70%; animation-delay: 4s; }
+        .flower:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; }
+        .flower:nth-child(5) { left: 50%; top: 10%; animation-delay: 3s; }
+        .flower:nth-child(6) { left: 40%; top: 80%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .card-container {
+            perspective: 1000px;
+            z-index: 10;
+        }
+
+        .card {
+            width: 400px;
+            background: linear-gradient(145deg, #fff5fb, #ffffff);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            position: relative;
+            animation: cardEntrance 1s ease-out;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ff9ed2, #ffd4e5, #b4d7ff, #dcc8ff);
+            border-radius: 30px;
+            z-index: -1;
+            animation: borderGlow 3s infinite;
+        }
+
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotateY(-20deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .heart-icon {
+            font-size: 4em;
+            color: #ff6b9d;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1.15); }
+        }
+
+        .title {
+            font-size: 2em;
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+        }
+
+        .name {
+            font-size: 3em;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #9b59b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+            margin: 25px 0;
+            font-style: italic;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quote {
+            font-size: 1.1em;
+            color: #8b5a9f;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffeef8, #f0e6ff);
+            border-radius: 15px;
+            border-left: 4px solid #ff6b9d;
+            font-weight: 500;
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+
+        .sparkle1 { top: 20px; left: 30px; animation-delay: 0s; }
+        .sparkle2 { top: 40px; right: 40px; animation-delay: 0.5s; }
+        .sparkle3 { bottom: 30px; left: 50px; animation-delay: 1s; }
+        .sparkle4 { bottom: 50px; right: 30px; animation-delay: 1.5s; }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌹</div>
+    <div class="flower">🌼</div>
+    <div class="flower">💐</div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="sparkles sparkle1"></div>
+            <div class="sparkles sparkle2"></div>
+            <div class="sparkles sparkle3"></div>
+            <div class="sparkles sparkle4"></div>
+            
+            <div class="heart-icon">💖</div>
+            
+            <div class="title">¡Feliz Día de las Madres!</div>
+            
+            <div class="name">Martha</div>
+            
+            <div class="message">
+                Tu amor es el abrazo que cobija mis días,<br>
+                la luz que ilumina cada amanecer,<br>
+                y la fuerza que me impulsa a ser mejor.
+            </div>
+            
+            <div class="quote">
+                "En tu sonrisa encontré mi hogar, en tus brazos mi refugio, y en tu corazón el amor más puro que existe."
+            </div>
+            
+            <div class="footer">
+                ¡Te amo infinitamente! ✨
+            </div>
+        </div>
+    </div>
+</body>
+</html>
